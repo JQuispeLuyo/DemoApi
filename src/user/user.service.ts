@@ -17,6 +17,18 @@ export class UserService {
 
     async create(persona: UsuarioDTO){
         let user = this.usuarioRepository.create(persona);
-        this.usuarioRepository.save(user);
+        return this.usuarioRepository.save(user);
+    }
+
+    async update(IDPER:number, persona: UsuarioDTO){
+        let user = this.usuarioRepository.update({IDPER},persona);
+    }
+
+    async delete(IDPER:number){
+        let user = this.usuarioRepository.delete({IDPER});
+    }
+
+    async query(IDPER:number){
+        let user = this.usuarioRepository.createQueryBuilder('usuario');
     }
 }

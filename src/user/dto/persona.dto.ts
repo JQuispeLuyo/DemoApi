@@ -1,5 +1,5 @@
 export class UsuarioDTO{
-    IDPER:string;
+    IDPER:number;
     NOMPER:string;
     APEPER:string;
 }
